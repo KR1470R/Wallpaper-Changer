@@ -5,7 +5,7 @@
 
 	# echo $NOWH:$NOWM:$NOWS
 
-	if (($NOWH >= 17 && $NOWM == 0 && $NOWS == 00));then
+	if (($NOWH >= 17));then
 		if (($((1 + RANDOM % 3)) ==  1));then
 			gsettings set org.mate.background picture-filename /home/krip/Desktop/scriptbash/wallpapers/night/night1.jpg
 		elif (($((1 + RANDOM % 3)) == 2));then
