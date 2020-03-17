@@ -1,0 +1,24 @@
+#!/bin/bash
+	NOWH=$(date +'%H')
+	NOWM=$(date +'%M')
+	NOWS=$(date +'%S')
+
+	# echo $NOWH:$NOWM:$NOWS
+
+	if (($NOWH >= 17 && $NOWM == 0 && $NOWS == 00));then
+		if (($((1 + RANDOM % 3)) ==  1));then
+			gsettings set org.mate.background picture-filename /home/krip/Desktop/scriptbash/wallpapers/night/night1.jpg
+		elif (($((1 + RANDOM % 3)) == 2));then
+			gsettings set org.mate.background picture-filename /home/krip/Desktop/scriptbash/wallpapers/night/night2.jpg
+		elif (($((1 + RANDOM % 3)) == 3));then
+			gsettings set org.mate.background picture-filename /home/krip/Desktop/scriptbash/wallpapers/night/night3.jpg
+		fi
+	elif (($NOWH < 17));then
+				if (($((1 + RANDOM % 3)) ==  1));then
+					gsettings set org.mate.background picture-filename /home/krip/Desktop/scriptbash/wallpapers/day/day1.jpg
+				elif (($((1 + RANDOM % 3)) == 2));then
+					gsettings set org.mate.background picture-filename /home/krip/Desktop/scriptbash/wallpapers/day/day2.jpg
+				elif (($((1 + RANDOM % 3)) == 3));then
+					gsettings set org.mate.background picture-filename /home/krip/Desktop/scriptbash/wallpapers/day/day3.jpg
+				fi
+	fi
